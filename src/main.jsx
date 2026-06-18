@@ -7,12 +7,12 @@ import toast, { Toaster } from 'react-hot-toast';
 root.render(
     <>
     <h1>Hot Toast</h1>
-    <button onclick={() => {
+    <button onClick={() => {
         toast.loading('This is a loading toast!');
     }}>
         Start loading
     </button>
-    <button onclick={() => {
+    <button onClick={() => {
         toast.dismiss();
     }}>
          Stop Loading
