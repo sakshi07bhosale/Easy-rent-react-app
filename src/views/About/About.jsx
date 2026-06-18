@@ -1,4 +1,3 @@
-import About from "./About";
 function About(){
     return <div>About</div>;
 }

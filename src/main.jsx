@@ -1,22 +1,23 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import toast, { Toaster } from 'react-hot-toast';
+import  { Toaster } from 'react-hot-toast';
+import { BrowserRouter, Routes, Route }from 'react-router';
+import Home from "./views/Home/Home";
+import About from "./views/About/About";
+import Properties from "./views/Properties/Properties";
 
  const root = createRoot(document.getElementById('root'))
 
 root.render(
     <>
-    <h1>Hot Toast</h1>
-    <button onClick={() => {
-        toast.loading('This is a loading toast!');
-    }}>
-        Start loading
-    </button>
-    <button onClick={() => {
-        toast.dismiss();
-    }}>
-         Stop Loading
-    </button>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/properties" element={<Properties />} />
+        </Routes>
+    </BrowserRouter>
+
     <Toaster />
     </>
 )
