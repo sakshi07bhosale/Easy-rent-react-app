@@ -1,3 +1,4 @@
+import PropertyCard from "./../../components/PropertyCard/PropertyCard";
 import { PROPERTIES } from "./../data";
 import "./Properties";
 
@@ -6,11 +7,15 @@ function Properties() {
         <div>
             <h1>Properties</h1>
             {PROPERTIES.map((propertyObj) => {
+                const { id, title, description, city, area } = propertyObj;
                 return (
-                    <div className="property" key={propertyObj.id}>
-                        <h2>{propertyObj.title}</h2>
-                        <p>{propertyObj.description}</p>
-                    </div>
+                    <PropertyCard
+                        key={id}
+                        title={title}
+                        description={description}
+                        city={city}
+                        area={area}
+                    />
                 );
             })}
         </div>
