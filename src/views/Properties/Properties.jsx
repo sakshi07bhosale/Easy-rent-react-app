@@ -9,7 +9,7 @@ function Properties() {
                 return (
                     <div className="property" key={propertyObj.id}>
                         <h2>{propertyObj.title}</h2>
-                        <p>{propertyObj.address}</p>
+                        <p>{propertyObj.description}</p>
                     </div>
                 );
             })}
