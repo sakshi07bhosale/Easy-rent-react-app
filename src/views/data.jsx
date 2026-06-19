@@ -107,6 +107,8 @@ const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
   const propertyType = propertyTypes[index % propertyTypes.length];
   const size = sizes[(index + 1) % sizes.length];
   const amenities = selectAmenities(index);
+  const address = `${i} ${area} Road, ${city}`;
+  const rent = 10000 + ((index * 1237) % 90000);
   const rating = getRating(index);
   const reviews = getReviews(index);
   const owner = getOwner(index);
@@ -121,6 +123,8 @@ const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
     propertyType,
     size,
     amenities,
+    address,
+    rent,
     photos: [],
     rating,
     reviews,

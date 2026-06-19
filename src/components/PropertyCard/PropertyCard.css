@@ -21,4 +21,11 @@
 
 .property-title{
     font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.property-address{
+    font-size: 13px;
+    margin:0 auto;
+    padding: 0 auto;
 }
