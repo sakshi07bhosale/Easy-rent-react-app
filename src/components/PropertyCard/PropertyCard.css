@@ -16,5 +16,9 @@
 .property-Img{
     width: 100%;
     height: 200px;
-    object-fit: contain !important;
+    object-fit: contain;
+}
+
+.property-title{
+    font-size: 18px;
 }
