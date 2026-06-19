@@ -1,7 +1,7 @@
 import "./PropertyCard.css";
 import DummyImg from "./../../components/PropertyCard/building.png";
 
-function PropertyCard({ title, address, city, area, propertyType, rent }){
+function PropertyCard({ title, address, city, area, propertyType, rent, rating }){
     return (
         <div className="property-card">
             <img src={DummyImg} alt="property" className="property-Img" />
@@ -11,6 +11,7 @@ function PropertyCard({ title, address, city, area, propertyType, rent }){
             <p>Type: {propertyType}</p>
             <p>Area: {area}</p>
             <p>City: {city}</p>
+            <p>Rating: {rating}</p>
         </div>
     );
 }
