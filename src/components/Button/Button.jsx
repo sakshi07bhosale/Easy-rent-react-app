@@ -1,5 +1,7 @@
+import "./Button.css";
+
 function Button({ title }) {
-    return <button className="app-button">{title}</button>;
+    return <button className="btn">{title}</button>;
 }
 
 export default Button;
