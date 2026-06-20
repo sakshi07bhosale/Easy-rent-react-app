@@ -1,6 +1,5 @@
-import Button from "./Button";
-function Button(){
-    return <div>Button</div>;
+function Button({ title }) {
+    return <button className="app-button">{title}</button>;
 }
 
 export default Button;

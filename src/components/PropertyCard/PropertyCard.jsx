@@ -1,6 +1,7 @@
 import "./PropertyCard.css";
 import DummyImg from "./../../components/PropertyCard/building.png";
 import { ChartArea,Building2,HandCoins,Sofa } from 'lucide-react';
+import Button from "./../../components/Button/Button";
 
 function PropertyInfo({icon, label}) {
     return (
@@ -24,6 +25,10 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating, 
             <PropertyInfo icon={<ChartArea />} label={area} />
             <PropertyInfo icon={<HandCoins />} label={`₹${rent}`} />
             <PropertyInfo icon={<Sofa />} label={furnished ? "Yes" : "No"} />
+
+            <div>
+                <Button title={"Know More"} />
+            </div>
 
         </div>
     );
