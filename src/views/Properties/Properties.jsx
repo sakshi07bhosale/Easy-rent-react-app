@@ -12,6 +12,7 @@ function Properties() {
                     return (
                         <PropertyCard
                             key={id}
+                            id={id}
                             title={title}
                             address={address}
                             area={area}

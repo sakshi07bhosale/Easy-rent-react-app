@@ -13,7 +13,7 @@ function PropertyInfo({icon, label}) {
 
 }
 
-function PropertyCard({ title, address, city, area, propertyType, rent, rating, furnished }){
+function PropertyCard({ title, address, city, area, propertyType, rent, rating, furnished, id }){
     return (
         <div className="property-card">
             <img src={DummyImg} alt="property" className="property-Img" />
@@ -27,7 +27,9 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating, 
             <PropertyInfo icon={<Sofa />} label={furnished ? "Yes" : "No"} />
 
             <div className="card-actions">
-                <Button title={"Know More"} />
+                <Button title={"Know More"} onClick={()=>{
+                    window.location.href=`/property/${id}`;
+                }} />
             </div>
 
         </div>
