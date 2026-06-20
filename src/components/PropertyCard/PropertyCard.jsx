@@ -5,7 +5,8 @@ import { ChartArea,Building2,HandCoins,Sofa } from 'lucide-react';
 function PropertyInfo({icon, label}) {
     return (
         <div className="property-info">
-            {icon} {label}
+            {icon} 
+            <span className="property-info-label">{label}</span>
         </div>
     )
 
