@@ -26,7 +26,7 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating, 
             <PropertyInfo icon={<HandCoins />} label={`₹${rent}`} />
             <PropertyInfo icon={<Sofa />} label={furnished ? "Yes" : "No"} />
 
-            <div>
+            <div className="card-actions">
                 <Button title={"Know More"} />
             </div>
 

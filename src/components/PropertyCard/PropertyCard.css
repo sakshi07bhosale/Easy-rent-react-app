@@ -48,3 +48,8 @@
 .property-info-label{
     margin-left: 5px;
 }
+
+.card-actions{
+    display:flex;
+    justify-content: center;
+}
