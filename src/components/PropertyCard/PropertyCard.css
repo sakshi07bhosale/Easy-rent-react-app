@@ -38,3 +38,10 @@
     margin:0 auto;
     padding: 0 auto;
 }
+
+.property-info{
+    display: flex;
+    align-iteam: center;
+    margin: 10px 0;
+
+}
