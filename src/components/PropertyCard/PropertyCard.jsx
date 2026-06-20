@@ -9,7 +9,7 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating, 
             <h2 className="property-title">{title}</h2>
             <p className="property-address">Address: {address}</p>
             <p><Building2 /> {propertyType}</p>
-            <p>Rating: {rating}</p>
+            <p className="rating-info"> {rating}</p>
             <p><ChartArea /> {area}</p>
             <p><HandCoins /> ₹{rent}</p>
             <p><Sofa /> {furnished ? "Yes" : "No"}</p>
