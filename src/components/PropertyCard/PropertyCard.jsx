@@ -1,5 +1,6 @@
 import "./PropertyCard.css";
 import DummyImg from "./../../components/PropertyCard/building.png";
+import { Scan } from 'lucide-react';
 
 function PropertyCard({ title, address, city, area, propertyType, rent, rating }){
     return (
@@ -9,10 +10,10 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating }
             <p className="property-address">Address: {address}</p>
             <p>Rent: ₹{rent}</p>
             <p>Type: {propertyType}</p>
-            <p>Area: {area}</p>
+            <p><Scan /> {area}</p>
             <p>Rating: {rating}</p>
         </div>
     );
-}
+} 
 
 export default PropertyCard;

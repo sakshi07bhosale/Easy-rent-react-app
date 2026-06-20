@@ -1,10 +1,10 @@
 const cities = {
-  Mumbai: ['Andheri', 'Borivali', 'Powai', 'Juhu', 'Bandra', 'Thane'],
-  Delhi: ['Saket', 'Dwarka', 'Karol Bagh', 'Rohini', 'Lajpat Nagar', 'Janakpuri'],
-  Bangalore: ['Whitefield', 'Koramangala', 'Indiranagar', 'Yelahanka', 'Jayanagar', 'HSR Layout'],
-  Chennai: ['Adyar', 'Velachery', 'Anna Nagar', 'T Nagar', 'Tambaram', 'Porur'],
-  Hyderabad: ['Gachibowli', 'Banjara Hills', 'Madhapur', 'Kukatpally', 'Secunderabad', 'Jubilee Hills'],
-  Pune: ['Kalyani Nagar', 'Baner', 'Pimpri', 'Aundh', 'Wakad', 'Shivaji Nagar']
+  Mumbai: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
+  Delhi: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
+  Bangalore: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
+  Chennai: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
+  Hyderabad: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
+  Pune: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft']
 };
 
 const propertyTypes = ['Flat', 'Bungalow', 'Villa', 'Penthouse'];
