@@ -9,6 +9,7 @@ const cities = {
 
 const propertyTypes = ['Flat', 'Bungalow', 'Villa', 'Penthouse'];
 const sizes = ['Studio', '1BHK', '2BHK', '3BHK', '4BHK'];
+const furnishedOptions = ['Furnished', 'Semi-Furnished', 'Unfurnished'];
 const amenitySets = [
   ['Swimming Pool', 'Lift', 'Gym', 'Parking'],
   ['Lift', 'Parking', 'Security', 'Clubhouse'],
@@ -107,6 +108,7 @@ const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
   const propertyType = propertyTypes[index % propertyTypes.length];
   const size = sizes[(index + 1) % sizes.length];
   const amenities = selectAmenities(index);
+  const furnished = furnishedOptions[index % furnishedOptions.length];
   const address = `${i} ${area} Road, ${city}`;
   const rent = 10000 + ((index * 1237) % 90000);
   const rating = getRating(index);
@@ -117,11 +119,12 @@ const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
   return {
     id: i,
     title: `${size} ${propertyType} in ${area}, ${city}`,
-    description: `A modern ${size.toLowerCase()} ${propertyType.toLowerCase()} located in ${area}, ${city}, with easy access to transit and local amenities.`,
+    description: `A modern ${size.toLowerCase()} ${propertyType.toLowerCase()} located in ${area}, ${city}, ${furnished.toLowerCase()}, with easy access to transit and local amenities.`,
     city,
     area,
     propertyType,
     size,
+    furnished,
     amenities,
     address,
     rent,
