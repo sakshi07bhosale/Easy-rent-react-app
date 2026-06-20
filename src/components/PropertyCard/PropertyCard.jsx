@@ -10,7 +10,6 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating }
             <p>Rent: ₹{rent}</p>
             <p>Type: {propertyType}</p>
             <p>Area: {area}</p>
-            <p>City: {city}</p>
             <p>Rating: {rating}</p>
         </div>
     );
