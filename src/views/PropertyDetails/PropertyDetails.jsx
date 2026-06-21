@@ -1,6 +1,6 @@
 import "./PropertyDetails.css"
 import { useParams } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DummuyImg from "./building.png";
 import {PROPERTIES} from "./../data"
 
@@ -18,7 +18,7 @@ function PropertyDetails() {
   return (
     <div>
       <img src={DummuyImg} alt="property" className="property-Img" />
-      <h1>Property details: { id } </h1>
+      <h1>{propertyDetails.title ? propertyDetails.title : `Property ${id}`} {id}</h1>
     </div>
   )
 }
