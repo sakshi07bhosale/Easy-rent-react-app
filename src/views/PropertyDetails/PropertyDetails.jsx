@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import DummuyImg from "./building.png";
 import {PROPERTIES} from "./../data"
+import RatingStars from "../../components/RatingStars";
 
 function PropertyDetails() {
   const { id } = useParams();
@@ -27,7 +28,9 @@ function PropertyDetails() {
       <p>{propertyDetails.rent}</p>
       <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
       <p>Amenities: {propertyDetails.amenities ? propertyDetails.amenities.join(", ") : "N/A"}</p>
-      <p>Rating: {propertyDetails.rating}</p>
+      <div className="detail-rating">
+        <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
+      </div>
       <p>Review count: {propertyDetails.reviews}</p>
       <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
       <div className="customer-reviews">
@@ -44,7 +47,7 @@ function PropertyDetails() {
                 </div>
                 <div className="review-card-author">
                   <strong>{review.name}</strong>
-                  <span>{review.rating}★</span>
+                  <RatingStars rating={review.rating} />
                 </div>
               </div>
               <p className="review-comment">{review.comment}</p>

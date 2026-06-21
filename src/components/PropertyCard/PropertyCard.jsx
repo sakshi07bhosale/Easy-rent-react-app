@@ -3,6 +3,7 @@ import DummyImg from "./../../components/PropertyCard/building.png";
 import { ChartArea,Building2,HandCoins,Sofa } from 'lucide-react';
 import Button from "./../../components/Button/Button";
 import { useNavigate } from "react-router";
+import RatingStars from "./../RatingStars";
 
 function PropertyInfo({icon, label}) {
     return (
@@ -21,7 +22,9 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating, 
             <img src={DummyImg} alt="property" className="property-Img" />
             <h2 className="property-title">{title}</h2>
             <p className="property-address">Address: {address}</p>
-            <p className="rating-info"> {rating}</p>
+            <div className="rating-info">
+              <RatingStars rating={rating} />
+            </div>
 
             <PropertyInfo icon={<Building2 />} label={propertyType} />
             <PropertyInfo icon={<ChartArea />} label={area} />
