@@ -28,8 +28,30 @@ function PropertyDetails() {
       <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
       <p>Amenities: {propertyDetails.amenities ? propertyDetails.amenities.join(", ") : "N/A"}</p>
       <p>Rating: {propertyDetails.rating}</p>
-      <p>Reviews: {propertyDetails.reviews}</p>
+      <p>Review count: {propertyDetails.reviews}</p>
       <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
+      <div className="customer-reviews">
+        <h2>Customer Reviews</h2>
+        {propertyDetails.customerReviews && propertyDetails.customerReviews.length > 0 ? (
+          propertyDetails.customerReviews.map((review) => (
+            <div key={review.id} className="review-card">
+              <div className="review-card-header">
+                <div className="review-card-avatar">
+                  {review.name.substring(0, 1).toUpperCase()}
+                </div>
+                <div className="review-card-author">
+                  <strong>{review.name}</strong>
+                  <span>{review.rating}★</span>
+                </div>
+              </div>
+              <p>{review.comment}</p>
+              <p className="review-date">{review.date}</p>
+            </div>
+          ))
+        ) : (
+          <p>No customer reviews yet.</p>
+        )}
+      </div>
     </div>
   )
 }

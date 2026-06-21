@@ -76,6 +76,20 @@ const owners = [
   'Manish Sharma', 'Pooja Kumar', 'Siddharth Reddy', 'Meera Singh'
 ];
 
+const reviewerNames = [
+  'Ananya Shah', 'Karan Mehta', 'Sima Desai', 'Priyanka Nair', 'Rohit Khanna', 'Isha Verma',
+  'Naveen Gupta', 'Aarti Joshi', 'Devika Rao', 'Amitabh Singh'
+];
+
+const reviewComments = [
+  'Excellent location and very clean. The owner was responsive and helpful.',
+  'Spacious home with great amenities and easy access to public transport.',
+  'Very comfortable stay; the property matched the description perfectly.',
+  'Great value for money, nice neighborhood and friendly management.',
+  'Well-maintained apartment with all essential facilities and a cozy feel.',
+  'The place was sparkling clean and the support team was very attentive.'
+];
+
 function getOwner(i) {
   const name = owners[i % owners.length];
   const numeric = 900000000 + ((i * 327 + 101) % 90000000);
@@ -84,6 +98,29 @@ function getOwner(i) {
     phone: `+91 9${numeric}`,
     email: `owner${i}@easyrent.example.com`
   };
+}
+
+function getCustomerReviews(index) {
+  return Array.from({ length: 3 }, (_, reviewIndex) => {
+    const reviewer = reviewerNames[(index + reviewIndex) % reviewerNames.length];
+    const rating = 3 + ((index + reviewIndex) % 3);
+    const comment = reviewComments[(index + reviewIndex) % reviewComments.length];
+    const daysAgo = 2 + ((index * 7 + reviewIndex * 5) % 28);
+    const reviewDate = new Date();
+    reviewDate.setDate(reviewDate.getDate() - daysAgo);
+
+    return {
+      id: reviewIndex + 1,
+      name: reviewer,
+      rating,
+      comment,
+      date: reviewDate.toLocaleDateString('en-IN', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      })
+    };
+  });
 }
 
 function selectAmenities(index) {
@@ -131,6 +168,7 @@ const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
     photos: [],
     rating,
     reviews,
+    customerReviews: getCustomerReviews(index),
     owner,
     nearby
   };

@@ -1,3 +1,48 @@
 .property-Img{
     height: 300px;
 }
+
+.review-card{
+    border: 1px solid black;
+    margin: 10px 20px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.review-card-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.review-card-header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.review-card-author{
+    padding-top:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.review-card-author span{
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.review-date{
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
