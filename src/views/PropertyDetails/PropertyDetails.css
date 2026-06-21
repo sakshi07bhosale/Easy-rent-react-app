@@ -1,48 +1,103 @@
 .property-Img{
-    height: 300px;
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.customer-reviews{
+    max-width: 860px;
+    margin: 30px 20px;
+    padding: 20px;
+    background: #f8fbff;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(45, 70, 120, 0.08);
+}
+
+.reviews-header-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.reviews-header-bar h2{
+    font-size: 1.35rem;
+    margin: 0;
+}
+
+.reviews-total{
+    color: #4d6bf3;
+    font-weight: 700;
+    font-size: 0.95rem;
 }
 
 .review-card{
-    border: 1px solid black;
-    margin: 10px 20px;
-    padding: 5px 20px;
-    border-radius: 5px;
-}
-
-.review-card-avatar{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-bottom: 0;
+    border: 1px solid rgba(47, 63, 88, 0.12);
+    background: #ffffff;
+    margin-bottom: 16px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(54, 86, 123, 0.06);
 }
 
 .review-card-header{
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.review-card-avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #5577ee;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 18px rgba(85, 119, 238, 0.24);
+    margin-bottom: 0;
 }
 
 .review-card-author{
-    padding-top:20px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+}
+
+.review-card-author strong{
+    font-size: 1rem;
+    color: #1f2a44;
 }
 
 .review-card-author span{
-    color: #555;
+    color: #6b778c;
     font-size: 0.95rem;
 }
 
+.review-comment{
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #3f4d6a;
+    margin: 0 0 12px;
+}
+
 .review-date{
-    color: #666;
+    color: #7b8292;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin: 0;
+}
+
+.no-reviews{
+    color: #5f6d8f;
+    font-size: 1rem;
+    padding: 12px 0;
 }

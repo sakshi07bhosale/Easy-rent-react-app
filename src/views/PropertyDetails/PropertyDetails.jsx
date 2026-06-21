@@ -31,7 +31,10 @@ function PropertyDetails() {
       <p>Review count: {propertyDetails.reviews}</p>
       <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
       <div className="customer-reviews">
-        <h2>Customer Reviews</h2>
+        <div className="reviews-header-bar">
+          <h2>Customer Reviews</h2>
+          <span className="reviews-total">{propertyDetails.reviews || 0} reviews</span>
+        </div>
         {propertyDetails.customerReviews && propertyDetails.customerReviews.length > 0 ? (
           propertyDetails.customerReviews.map((review) => (
             <div key={review.id} className="review-card">
@@ -44,12 +47,12 @@ function PropertyDetails() {
                   <span>{review.rating}★</span>
                 </div>
               </div>
-              <p>{review.comment}</p>
+              <p className="review-comment">{review.comment}</p>
               <p className="review-date">{review.date}</p>
             </div>
           ))
         ) : (
-          <p>No customer reviews yet.</p>
+          <p className="no-reviews">No customer reviews yet.</p>
         )}
       </div>
     </div>
