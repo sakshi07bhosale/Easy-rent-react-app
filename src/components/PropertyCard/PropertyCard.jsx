@@ -2,6 +2,7 @@ import "./PropertyCard.css";
 import DummyImg from "./../../components/PropertyCard/building.png";
 import { ChartArea,Building2,HandCoins,Sofa } from 'lucide-react';
 import Button from "./../../components/Button/Button";
+import { useNavigate } from "react-router";
 
 function PropertyInfo({icon, label}) {
     return (
@@ -14,6 +15,7 @@ function PropertyInfo({icon, label}) {
 }
 
 function PropertyCard({ title, address, city, area, propertyType, rent, rating, furnished, id }){
+    let navigate = useNavigate();
     return (
         <div className="property-card">
             <img src={DummyImg} alt="property" className="property-Img" />
@@ -28,7 +30,7 @@ function PropertyCard({ title, address, city, area, propertyType, rent, rating, 
 
             <div className="card-actions">
                 <Button title={"Know More"} onClick={()=>{
-                    window.location.href=`/property/${id}`;
+                    navigate(`/property/${id}`);
                 }} />
             </div>
 
