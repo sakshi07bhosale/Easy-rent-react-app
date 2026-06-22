@@ -28,11 +28,27 @@ function PropertyDetails() {
       <p>{propertyDetails.rent}</p>
       <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
       <p>Amenities: {propertyDetails.amenities ? propertyDetails.amenities.join(", ") : "N/A"}</p>
+      
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
       </div>
       <p>Review count: {propertyDetails.reviews}</p>
       <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
+      <div className="nearby-section">
+        <h2>Nearby Places</h2>
+        {propertyDetails.nearby ? (
+          <ul className="nearby-list">
+            <li><strong>Airport:</strong> {propertyDetails.nearby.airport}</li>
+            <li><strong>Mall:</strong> {propertyDetails.nearby.mall}</li>
+            <li><strong>Railway Station:</strong> {propertyDetails.nearby.railwayStation}</li>
+            <li><strong>Metro Station:</strong> {propertyDetails.nearby.metroStation}</li>
+            <li><strong>Hospital:</strong> {propertyDetails.nearby.hospital}</li>
+            <li><strong>School:</strong> {propertyDetails.nearby.school}</li>
+          </ul>
+        ) : (
+          <p>No nearby places available.</p>
+        )}
+      </div>
       <div className="customer-reviews">
         <div className="reviews-header-bar">
           <h2>Customer Reviews</h2>

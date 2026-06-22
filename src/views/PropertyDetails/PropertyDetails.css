@@ -83,6 +83,41 @@
     font-size: 0.95rem;
 }
 
+.nearby-section {
+    max-width: 860px;
+    margin: 30px 20px;
+    padding: 22px 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 16px 30px rgba(45, 70, 120, 0.08);
+    border: 1px solid rgba(79, 96, 146, 0.08);
+}
+
+.nearby-section h2 {
+    margin: 0 0 16px;
+    font-size: 1.35rem;
+    color: #1f2a44;
+}
+
+.nearby-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 12px 24px;
+}
+
+.nearby-list li {
+    font-size: 0.98rem;
+    color: #3f4d6a;
+    line-height: 1.7;
+}
+
+.nearby-list li strong {
+    color: #23304c;
+}
+
 .review-comment{
     font-size: 1rem;
     line-height: 1.75;
