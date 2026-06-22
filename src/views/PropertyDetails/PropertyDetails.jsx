@@ -40,12 +40,12 @@ function PropertyDetails() {
         <h2>Nearby Places</h2>
         {propertyDetails.nearby ? (
           <ul className="nearby-list">
-            <li><Plane className="nearby-icon" size={18} /> <strong>Airport:</strong> {propertyDetails.nearby.airport}</li>
-            <li><ShoppingBasket className="nearby-icon" size={18} /> <strong>Mall:</strong> {propertyDetails.nearby.mall}</li>
-            <li><TramFront className="nearby-icon" size={18} /> <strong>Railway Station:</strong> {propertyDetails.nearby.railwayStation}</li>
-            <li><TrainFront className="nearby-icon" size={18} /> <strong>Metro Station:</strong> {propertyDetails.nearby.metroStation}</li>
-            <li><Hospital className="nearby-icon" size={18} /> <strong>Hospital:</strong> {propertyDetails.nearby.hospital}</li>
-            <li><School className="nearby-icon" size={18} /> <strong>School:</strong> {propertyDetails.nearby.school}</li>
+            <li><Plane className="nearby-icon" size={25} /> <strong>Airport:</strong> {propertyDetails.nearby.airport}</li>
+            <li><ShoppingBasket className="nearby-icon" size={25} /> <strong>Mall:</strong> {propertyDetails.nearby.mall}</li>
+            <li><TramFront className="nearby-icon" size={25} /> <strong>Railway Station:</strong> {propertyDetails.nearby.railwayStation}</li>
+            <li><TrainFront className="nearby-icon" size={25} /> <strong>Metro Station:</strong> {propertyDetails.nearby.metroStation}</li>
+            <li><Hospital className="nearby-icon" size={25} /> <strong>Hospital:</strong> {propertyDetails.nearby.hospital}</li>
+            <li><School className="nearby-icon" size={25} /> <strong>School:</strong> {propertyDetails.nearby.school}</li>
           </ul>
         ) : (
           <p>No nearby places available.</p>
