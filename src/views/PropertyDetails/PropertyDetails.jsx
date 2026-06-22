@@ -36,19 +36,29 @@ function PropertyDetails() {
     <div>
       <img src={DummuyImg} alt="property" className="property-Img" />
       <h1>{propertyDetails.title ? propertyDetails.title : `Property ${id}`} {id}</h1>
-      <p>{propertyDetails.address}</p>
-      <p>{propertyDetails.propertyType}</p>
-      <p>{propertyDetails.size}</p>
-      <p>{propertyDetails.city}</p>
-      <p>{propertyDetails.area}</p>
-      <p>{propertyDetails.rent}</p>
-      <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
-      
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
       </div>
+      <p>{propertyDetails.address}</p>
+      <p>{propertyDetails.area}</p>
+      <p>{propertyDetails.propertyType}</p>
+      <p>{propertyDetails.size}</p>
+      <p>{propertyDetails.city}</p>
+      <p>{propertyDetails.rent}</p>
+      <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
+      
+      
       <p>Review count: {propertyDetails.reviews}</p>
-      <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
+      <div className="owner-card">
+        <div className="owner-card-left">
+          <div className="owner-avatar">{propertyDetails.owner ? propertyDetails.owner.name.substring(0, 1).toUpperCase() : 'O'}</div>
+        </div>
+        <div className="owner-card-body">
+          <div className="owner-name">{propertyDetails.owner ? propertyDetails.owner.name : 'Owner not available'}</div>
+          <div className="owner-contact">Phone: {propertyDetails.owner ? propertyDetails.owner.phone : 'N/A'}</div>
+          <div className="owner-contact">Email: {propertyDetails.owner ? propertyDetails.owner.email : 'N/A'}</div>
+        </div>
+      </div>
       <div className="amenities-section">
         <h2>Amenities</h2>
         {propertyDetails.amenities && propertyDetails.amenities.length > 0 ? (
@@ -136,7 +146,10 @@ function PropertyDetails() {
           <p className="no-reviews">No customer reviews yet.</p>
         )}
       </div>
+      
+      <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
     </div>
+    
   )
 }
 
