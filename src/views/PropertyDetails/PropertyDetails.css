@@ -152,6 +152,34 @@
     border-radius: 10px;
 }
 
+.property-summary-cards {
+    max-width: 860px;
+    margin: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.property-summary-card {
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid rgba(79, 96, 146, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(45, 70, 120, 0.06);
+}
+
+.summary-card-label {
+    font-size: 0.9rem;
+    color: #6b778c;
+    margin-bottom: 8px;
+}
+
+.summary-card-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f2a44;
+}
+
 .nearby-card-body {
     flex: 1 1 auto;
 }

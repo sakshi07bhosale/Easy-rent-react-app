@@ -39,16 +39,38 @@ function PropertyDetails() {
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
       </div>
-      <p>{propertyDetails.address}</p>
-      <p>{propertyDetails.area}</p>
-      <p>{propertyDetails.propertyType}</p>
-      <p>{propertyDetails.size}</p>
-      <p>{propertyDetails.city}</p>
-      <p>{propertyDetails.rent}</p>
-      <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
-      
-      
-      <p>Review count: {propertyDetails.reviews}</p>
+      <div>
+        
+          <div className="summary-card-label">Address</div>
+          <div className="summary-card-value">{propertyDetails.address || 'N/A'}</div>
+      </div>
+      <div className="property-summary-cards">
+        
+        <div className="property-summary-card">
+          <div className="summary-card-label">Area</div>
+          <div className="summary-card-value">{propertyDetails.area || 'N/A'}</div>
+        </div>
+        <div className="property-summary-card">
+          <div className="summary-card-label">Type</div>
+          <div className="summary-card-value">{propertyDetails.propertyType || 'N/A'}</div>
+        </div>
+        <div className="property-summary-card">
+          <div className="summary-card-label">Size</div>
+          <div className="summary-card-value">{propertyDetails.size || 'N/A'}</div>
+        </div>
+        <div className="property-summary-card">
+          <div className="summary-card-label">City</div>
+          <div className="summary-card-value">{propertyDetails.city || 'N/A'}</div>
+        </div>
+        <div className="property-summary-card">
+          <div className="summary-card-label">Rent</div>
+          <div className="summary-card-value">{propertyDetails.rent || 'N/A'}</div>
+        </div>
+        <div className="property-summary-card">
+          <div className="summary-card-label">Furnished</div>
+          <div className="summary-card-value">{propertyDetails.furnished ? 'Yes' : 'No'}</div>
+        </div>
+      </div>
       <div className="owner-card">
         <div className="owner-card-left">
           <div className="owner-avatar">{propertyDetails.owner ? propertyDetails.owner.name.substring(0, 1).toUpperCase() : 'O'}</div>
