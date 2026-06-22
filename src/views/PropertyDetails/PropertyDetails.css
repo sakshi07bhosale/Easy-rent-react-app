@@ -118,6 +118,12 @@
     color: #23304c;
 }
 
+.nearby-icon {
+    vertical-align: middle;
+    margin-right: 10px;
+    color: #4d6bf3;
+}
+
 .review-comment{
     font-size: 1rem;
     line-height: 1.75;
