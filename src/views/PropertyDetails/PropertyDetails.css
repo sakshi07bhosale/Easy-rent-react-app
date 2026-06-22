@@ -121,7 +121,57 @@
 .nearby-icon {
     vertical-align: middle;
     margin-right: 10px;
-    color: #bcbdbe;
+    color: #0c0c0c;
+}
+
+.nearby-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.nearby-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(34,48,76,0.06);
+    box-shadow: 0 8px 20px rgba(45,70,120,0.04);
+}
+
+.nearby-card-left {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77,107,243,0.08);
+    border-radius: 10px;
+}
+
+.nearby-card-body {
+    flex: 1 1 auto;
+}
+
+.nearby-card-title {
+    font-weight: 700;
+    color: #1f2a44;
+    margin-bottom: 4px;
+}
+
+.nearby-card-place {
+    color: #4b5b7a;
+    font-size: 0.95rem;
+}
+
+.nearby-distance {
+    color: #6b778c;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-left: 8px;
 }
 
 .review-comment{

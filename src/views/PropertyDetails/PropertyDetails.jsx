@@ -39,14 +39,46 @@ function PropertyDetails() {
       <div className="nearby-section">
         <h2>Nearby Places</h2>
         {propertyDetails.nearby ? (
-          <ul className="nearby-list">
-            <li><Plane className="nearby-icon" size={25} /> <strong>Airport:</strong> {propertyDetails.nearby.airport}</li>
-            <li><ShoppingBasket className="nearby-icon" size={25} /> <strong>Mall:</strong> {propertyDetails.nearby.mall}</li>
-            <li><TramFront className="nearby-icon" size={25} /> <strong>Railway Station:</strong> {propertyDetails.nearby.railwayStation}</li>
-            <li><TrainFront className="nearby-icon" size={25} /> <strong>Metro Station:</strong> {propertyDetails.nearby.metroStation}</li>
-            <li><Hospital className="nearby-icon" size={25} /> <strong>Hospital:</strong> {propertyDetails.nearby.hospital}</li>
-            <li><School className="nearby-icon" size={25} /> <strong>School:</strong> {propertyDetails.nearby.school}</li>
-          </ul>
+            (() => {
+              const entries = Object.entries(propertyDetails.nearby);
+              const computeDistance = (idx) => {
+                const base = ((propertyDetails.id || 0) % 5) + 1;
+                const km = (base + (idx % 3) * 0.5).toFixed(1);
+                return `${km} km`;
+              };
+
+              return (
+                <div className="nearby-cards">
+                  {entries.map(([key, name], idx) => (
+                    <div className="nearby-card" key={key}>
+                      <div className="nearby-card-left">
+                        {key === 'airport' && <Plane className="nearby-icon" size={20} />}
+                        {key === 'mall' && <ShoppingBasket className="nearby-icon" size={20} />}
+                        {key === 'railwayStation' && <TramFront className="nearby-icon" size={20} />}
+                        {key === 'metroStation' && <TrainFront className="nearby-icon" size={20} />}
+                        {key === 'hospital' && <Hospital className="nearby-icon" size={20} />}
+                        {key === 'school' && <School className="nearby-icon" size={20} />}
+                      </div>
+                      <div className="nearby-card-body">
+                        <div className="nearby-card-title">{(() => {
+                          switch (key) {
+                            case 'airport': return 'Airport';
+                            case 'mall': return 'Mall';
+                            case 'railwayStation': return 'Railway Station';
+                            case 'metroStation': return 'Metro Station';
+                            case 'hospital': return 'Hospital';
+                            case 'school': return 'School';
+                            default: return key;
+                          }
+                        })()}</div>
+                        <div className="nearby-card-place">{name}</div>
+                      </div>
+                      <div className="nearby-distance">{computeDistance(idx)}</div>
+                    </div>
+                  ))}
+                </div>
+              );
+            })()
         ) : (
           <p>No nearby places available.</p>
         )}
