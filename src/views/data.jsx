@@ -123,9 +123,19 @@ function getCustomerReviews(index) {
   });
 }
 
+const ALL_AMENITIES = [
+  'Swimming Pool', 'Lift', 'Gym', 'Parking', 'Security',
+  'Clubhouse', 'Garden', 'Power Backup', 'WiFi', 'CCTV',
+  "Children's Play Area", 'Maintenance', 'AC'
+];
+
 function selectAmenities(index) {
-  const base = amenitySets[index % amenitySets.length];
-  return base.slice(0, 2 + ((index + 1) % 3));
+  const start = index % ALL_AMENITIES.length;
+  const result = [];
+  for (let i = 0; i < 5; i++) {
+    result.push(ALL_AMENITIES[(start + i) % ALL_AMENITIES.length]);
+  }
+  return result;
 }
 
 function getRating(index) {

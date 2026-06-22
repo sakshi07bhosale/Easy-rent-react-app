@@ -18,6 +18,20 @@ function PropertyDetails() {
     }
   }, [id]);
 
+  const renderAmenityIcon = (amenity) => {
+    switch (amenity) {
+      case 'Swimming Pool': return <span className="amenity-icon" aria-hidden>🏊</span>;
+      case 'Lift': return <span className="amenity-icon" aria-hidden>⬆️⬇️</span>;
+      case 'Gym': return <span className="amenity-icon" aria-hidden>🏋️</span>;
+      case 'Parking': return <span className="amenity-icon" aria-hidden>🅿️</span>;
+      case 'Security': return <span className="amenity-icon" aria-hidden>🛡️</span>;
+      case 'Clubhouse': return <span className="amenity-icon" aria-hidden>🏠</span>;
+      case 'Garden': return <span className="amenity-icon" aria-hidden>🌳</span>;
+      case 'Power Backup': return <span className="amenity-icon" aria-hidden>⚡</span>;
+      default: return <span className="amenity-icon" aria-hidden>🔸</span>;
+    }
+  };
+
   return (
     <div>
       <img src={DummuyImg} alt="property" className="property-Img" />
@@ -29,13 +43,27 @@ function PropertyDetails() {
       <p>{propertyDetails.area}</p>
       <p>{propertyDetails.rent}</p>
       <p>{propertyDetails.furnished ? "Furnished" : "Unfurnished"}</p>
-      <p>Amenities: {propertyDetails.amenities ? propertyDetails.amenities.join(", ") : "N/A"}</p>
       
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
       </div>
       <p>Review count: {propertyDetails.reviews}</p>
       <p>Owner: {propertyDetails.owner ? propertyDetails.owner.name : "N/A"}</p>
+      <div className="amenities-section">
+        <h2>Amenities</h2>
+        {propertyDetails.amenities && propertyDetails.amenities.length > 0 ? (
+          <div className="amenities-grid">
+            {propertyDetails.amenities.map((amenity) => (
+              <div className="amenity-card" key={amenity}>
+                <div className="amenity-icon-wrap">{renderAmenityIcon(amenity)}</div>
+                <div className="amenity-name">{amenity}</div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>N/A</p>
+        )}
+      </div>
       <div className="nearby-section">
         <h2>Nearby Places</h2>
         {propertyDetails.nearby ? (
