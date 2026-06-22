@@ -41,7 +41,6 @@ function PropertyDetails() {
       </div>
       <div>
         
-          <div className="summary-card-label">Address</div>
           <div className="summary-card-value">{propertyDetails.address || 'N/A'}</div>
       </div>
       <div className="property-summary-cards">
