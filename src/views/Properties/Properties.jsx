@@ -1,8 +1,10 @@
 import PropertyCard from "./../../components/PropertyCard/PropertyCard";
 import { PROPERTIES } from "./../data";
 import "./Properties.css";
+import { useState } from "react";
 
 function Properties() {
+    const [properties, setProperties] = useState(PROPERTIES);
     return (
         <div>
             <h1>Properties</h1>
