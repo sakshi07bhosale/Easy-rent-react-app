@@ -1,9 +1,41 @@
 .property-Img{
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    max-width: 860px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 24px;
+    max-width: 860px;
+}
+
+.photo-thumb {
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 3px;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.photo-thumb.selected {
+    border-color: #4d6bf3;
+    transform: scale(1.02);
+}
+
+.photo-thumb img {
+    width: 95px;
+    height: 65px;
     object-fit: cover;
     border-radius: 12px;
-    margin-bottom: 20px;
+    display: block;
 }
 
 .customer-reviews{

@@ -10,6 +10,7 @@ import { Plane,ShoppingBasket,TramFront,TrainFront,Hospital,School } from 'lucid
 function PropertyDetails() {
   const { id } = useParams();
   const [propertyDetails, setPropertyDetails] = useState({});
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,6 +22,7 @@ function PropertyDetails() {
     const property = PROPERTIES.find((prop) => prop.id === parseInt(id));
     if (property) {
       setPropertyDetails(property);
+      setSelectedPhotoIndex(0);
     }
   }, [id]);
 
@@ -38,9 +40,26 @@ function PropertyDetails() {
     }
   };
 
+  const photoList = propertyDetails.photos || [];
+  const selectedPhoto = photoList.length > 0 ? photoList[selectedPhotoIndex] : DummuyImg;
+
   return (
     <div>
-      <img src={(propertyDetails.photos && propertyDetails.photos.length) ? propertyDetails.photos[0] : DummuyImg} alt="property" className="property-Img" />
+      <img src={selectedPhoto} alt="property" className="property-Img" />
+      {photoList.length > 1 && (
+        <div className="photo-gallery">
+          {photoList.map((photo, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`photo-thumb ${index === selectedPhotoIndex ? 'selected' : ''}`}
+              onClick={() => setSelectedPhotoIndex(index)}
+            >
+              <img src={photo} alt={`Property photo ${index + 1}`} />
+            </button>
+          ))}
+        </div>
+      )}
       <h1>{propertyDetails.title ? propertyDetails.title : `Property ${id}`} {id}</h1>
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
