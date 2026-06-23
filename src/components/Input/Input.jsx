@@ -1,10 +1,5 @@
 import "./Input.css";
-function Input(
-    type = "text",
-    placeholder = "Search for properties",
-    value = "",
-    onChange = () => {}
-){
+function Input({ type = "text", placeholder = "Search for properties", value = "", onChange = () => {} }){
     return (<div>
         <input
             type={type}
