@@ -12,6 +12,12 @@ function PropertyDetails() {
   const [propertyDetails, setPropertyDetails] = useState({});
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+
+
+  useEffect(() => {
     const property = PROPERTIES.find((prop) => prop.id === parseInt(id));
     if (property) {
       setPropertyDetails(property);

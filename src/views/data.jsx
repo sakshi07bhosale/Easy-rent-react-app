@@ -182,7 +182,6 @@ function getPropertyPhotos(index) {
     return seed / 4294967296;
   }
 
-  // seeded Fisher-Yates shuffle of image indices
   const indices = Array.from({ length: totalImages }, (_, i) => i);
   for (let i = totalImages - 1; i > 0; i--) {
     const j = Math.floor(rand() * (i + 1));
