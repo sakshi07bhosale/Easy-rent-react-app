@@ -45,21 +45,23 @@ function PropertyDetails() {
 
   return (
     <div>
-      <img src={selectedPhoto} alt="property" className="property-Img" />
-      {photoList.length > 1 && (
-        <div className="photo-gallery">
-          {photoList.map((photo, index) => (
-            <button
-              key={index}
-              type="button"
-              className={`photo-thumb ${index === selectedPhotoIndex ? 'selected' : ''}`}
-              onClick={() => setSelectedPhotoIndex(index)}
-            >
-              <img src={photo} alt={`Property photo ${index + 1}`} />
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="property-image-section">
+        <img src={selectedPhoto} alt="property" className="property-Img" />
+        {photoList.length > 1 && (
+          <div className="photo-gallery">
+            {photoList.map((photo, index) => (
+              <button
+                key={index}
+                type="button"
+                className={`photo-thumb ${index === selectedPhotoIndex ? 'selected' : ''}`}
+                onClick={() => setSelectedPhotoIndex(index)}
+              >
+                <img src={photo} alt={`Property photo ${index + 1}`} />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
       <h1>{propertyDetails.title ? propertyDetails.title : `Property ${id}`} {id}</h1>
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
