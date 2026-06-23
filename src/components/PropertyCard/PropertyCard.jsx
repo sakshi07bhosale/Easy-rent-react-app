@@ -15,11 +15,11 @@ function PropertyInfo({icon, label}) {
 
 }
 
-function PropertyCard({ title, address, city, area, propertyType, rent, rating, furnished, id }){
+function PropertyCard({ title, address, city, area, propertyType, rent, rating, furnished, id, photos }){
     let navigate = useNavigate();
     return (
         <div className="property-card">
-            <img src={DummyImg} alt="property" className="property-Img" />
+            <img src={photos && photos.length ? photos[0] : DummyImg} alt="property" className="property-Img" />
             <h2 className="property-title">{title}</h2>
             <p className="property-address">Address: {address}</p>
             <div className="rating-info">

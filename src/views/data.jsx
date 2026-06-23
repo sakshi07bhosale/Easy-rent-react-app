@@ -1,3 +1,30 @@
+import Img1 from "./../assets/1.avif";
+import Img2 from "./../assets/2.avif";
+import Img3 from "./../assets/3.avif";
+import Img4 from "./../assets/4.avif";
+import Img5 from "./../assets/5.avif";
+import Img6 from "./../assets/6.avif";
+import Img7 from "./../assets/7.avif";
+import Img8 from "./../assets/8.avif";
+import Img9 from "./../assets/9.avif";
+import Img10 from "./../assets/10.avif";
+import Img11 from "./../assets/11.avif";
+import Img12 from "./../assets/12.avif";
+import Img13 from "./../assets/13.avif";
+import Img14 from "./../assets/14.avif";
+import Img15 from "./../assets/15.avif";
+import Img16 from "./../assets/16.avif";
+import Img17 from "./../assets/17.avif";
+import Img18 from "./../assets/18.avif";
+import Img19 from "./../assets/19.avif";
+import Img20 from "./../assets/20.avif";
+
+const IMAGES = [
+  Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10,
+  Img11, Img12, Img13, Img14, Img15, Img16, Img17, Img18, Img19, Img20
+];
+
+
 const cities = {
   Mumbai: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
   Delhi: ['Studio 300 sqft', '1BHK 450 sqft', '2BHK 750 sqft', '3BHK 1100 sqft', '4BHK 1500 sqft', 'Penthouse 2200 sqft'],
@@ -146,6 +173,27 @@ function getReviews(index) {
   return 15 + ((index * 11) % 185);
 }
 
+function getPropertyPhotos(index) {
+  const totalImages = IMAGES.length;
+  // deterministic pseudo-random generator seeded by index for reproducibility
+  let seed = index + 1;
+  function rand() {
+    seed = (seed * 1664525 + 1013904223) % 4294967296;
+    return seed / 4294967296;
+  }
+
+  // seeded Fisher-Yates shuffle of image indices
+  const indices = Array.from({ length: totalImages }, (_, i) => i);
+  for (let i = totalImages - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    const tmp = indices[i];
+    indices[i] = indices[j];
+    indices[j] = tmp;
+  }
+
+  return indices.slice(0, 5).map((idx) => IMAGES[idx]);
+}
+
 const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
   const i = index + 1;
   const cityKeys = Object.keys(cities);
@@ -175,7 +223,7 @@ const PROPERTIES = Array.from({ length: 200 }, (_, index) => {
     amenities,
     address,
     rent,
-    photos: [],
+    photos: getPropertyPhotos(index),
     rating,
     reviews,
     customerReviews: getCustomerReviews(index),

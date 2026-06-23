@@ -8,7 +8,7 @@ function Properties() {
             <h1>Properties</h1>
             <div className="properties-container">
                 {PROPERTIES.map((propertyObj) => {
-                    const { id, title,  area, propertyType, rent, address, rating,furnished } = propertyObj;
+                    const { id, title,  area, propertyType, rent, address, rating,furnished, photos } = propertyObj;
                     return (
                         <PropertyCard
                             key={id}
@@ -20,6 +20,7 @@ function Properties() {
                             rent={rent}
                             rating={rating}
                             furnished={furnished}
+                            photos={photos}
                         />
                     );
                 })}

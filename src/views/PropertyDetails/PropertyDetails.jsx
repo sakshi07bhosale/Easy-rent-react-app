@@ -34,7 +34,7 @@ function PropertyDetails() {
 
   return (
     <div>
-      <img src={DummuyImg} alt="property" className="property-Img" />
+      <img src={(propertyDetails.photos && propertyDetails.photos.length) ? propertyDetails.photos[0] : DummuyImg} alt="property" className="property-Img" />
       <h1>{propertyDetails.title ? propertyDetails.title : `Property ${id}`} {id}</h1>
       <div className="detail-rating">
         <RatingStars rating={propertyDetails.rating || 0} showScore={true} />
