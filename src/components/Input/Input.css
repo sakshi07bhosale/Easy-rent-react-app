@@ -1,6 +1,7 @@
 .input-field{
-    width: 900px;
+    width: 500px;
     padding: 8px;
+    padding-left: 100px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
