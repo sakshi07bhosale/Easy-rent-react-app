@@ -3,3 +3,39 @@
     flex-wrap:wrap;
     justify-content:space-around;
 }
+
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    color: #555;
+}
+
+.no-results img {
+    max-width: 320px;
+    width: 40%;
+    height: auto;
+    margin-bottom: 16px;
+    opacity: 0.95;
+}
+
+.no-results h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.no-results p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.no-results-hint {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+}

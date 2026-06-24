@@ -3,6 +3,7 @@ import { PROPERTIES } from "./../data";
 import "./Properties.css";
 import { useState } from "react";
 import Input from "./../../components/Input/Input";
+import NoResultsImg from "./House-search.png";
 
 function Properties() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -46,25 +47,39 @@ function Properties() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onFilterChange={(updatedFilters) => setFilters(updatedFilters)}
             />
-            <div className="properties-container">
-                {filteredProperties.map((propertyObj) => {
-                    const { id, title, area, propertyType, rent, address, rating, furnished, photos } = propertyObj;
-                    return (
-                        <PropertyCard
-                            key={id}
-                            id={id}
-                            title={title}
-                            address={address}
-                            area={area}
-                            propertyType={propertyType}
-                            rent={rent}
-                            rating={rating}
-                            furnished={furnished}
-                            photos={photos}
-                        />
-                    );
-                })}
-            </div>
+
+            {filteredProperties.length === 0 ? (
+                <div className="no-results">
+                    <img src={NoResultsImg} alt="No properties found" />
+                    <h2>No Properties Found</h2>
+                    <p>
+                        {normalizedSearch
+                            ? `We couldn't find any properties matching "${searchTerm}".`
+                            : "No properties match the selected filters."}
+                    </p>
+                    <p className="no-results-hint">Try adjusting your search or clearing the filters.</p>
+                </div>
+            ) : (
+                <div className="properties-container">
+                    {filteredProperties.map((propertyObj) => {
+                        const { id, title, area, propertyType, rent, address, rating, furnished, photos } = propertyObj;
+                        return (
+                            <PropertyCard
+                                key={id}
+                                id={id}
+                                title={title}
+                                address={address}
+                                area={area}
+                                propertyType={propertyType}
+                                rent={rent}
+                                rating={rating}
+                                furnished={furnished}
+                                photos={photos}
+                            />
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
 }
