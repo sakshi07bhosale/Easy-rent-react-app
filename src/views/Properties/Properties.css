@@ -1,3 +1,39 @@
+/* ---- Page Header ---- */
+.properties-header {
+    padding: 52px 24px 32px;
+    background: linear-gradient(160deg, var(--bg-subtle) 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.properties-title {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--text-h);
+    margin: 0 0 12px;
+    letter-spacing: -1.2px;
+}
+
+.properties-desc {
+    font-size: 15px;
+    color: var(--text);
+    max-width: 480px;
+    margin: 0 auto 16px;
+    line-height: 1.65;
+}
+
+.properties-count {
+    display: inline-block;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+/* ---- Grid ---- */
 .properties-container {
     display: flex;
     flex-wrap: wrap;
@@ -5,6 +41,7 @@
     padding: 8px 0 24px;
 }
 
+/* ---- No Results ---- */
 .no-results {
     display: flex;
     flex-direction: column;
@@ -40,4 +77,14 @@
     font-size: 13px;
     color: var(--accent);
     margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .properties-title {
+        font-size: 30px;
+    }
+
+    .properties-header {
+        padding: 36px 16px 24px;
+    }
 }

@@ -41,7 +41,18 @@ function Properties() {
 
     return (
         <div>
-            <h1>Properties</h1>
+            <div className="properties-header">
+                <h1 className="properties-title">Browse Properties</h1>
+                <p className="properties-desc">
+                    <i>Explore our curated listings of apartments, villas, and studios.
+                    Use the search and filters to find the right fit for your budget and lifestyle.</i>
+                </p>
+                {filteredProperties.length > 0 && (
+                    <span className="properties-count">
+                        {filteredProperties.length} propert{filteredProperties.length === 1 ? "y" : "ies"} found
+                    </span>
+                )}
+            </div>
             <Input 
                 value={searchTerm} 
                 onChange={(e) => setSearchTerm(e.target.value)}
