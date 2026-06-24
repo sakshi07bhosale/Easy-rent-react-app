@@ -1,8 +1,42 @@
-.input-field{
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-field {
     width: 500px;
     padding: 8px;
     padding-left: 100px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.filter-dropdowns {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.dropdown {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 150px;
+    transition: border-color 0.3s ease;
+}
+
+.dropdown:hover {
+    border-color: #999;
+}
+
+.dropdown:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
