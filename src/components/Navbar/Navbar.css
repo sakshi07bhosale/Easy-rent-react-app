@@ -18,10 +18,11 @@
     color: var(--accent);
     text-decoration: none;
     letter-spacing: -0.5px;
+    transition: color 0.15s;
 }
 
 .navbar-logo:hover {
-    opacity: 0.85;
+    color: var(--accent-dark);
 }
 
 .navbar-links {
@@ -40,7 +41,8 @@
     font-weight: 500;
     color: var(--text);
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .nav-link:hover {
@@ -51,7 +53,7 @@
 .nav-link.active {
     background: var(--accent-bg);
     color: var(--accent);
-    border: 1px solid var(--accent-border);
+    border-color: var(--accent-border);
 }
 
 @media (max-width: 600px) {

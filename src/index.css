@@ -1,15 +1,24 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* --- New teal/emerald theme --- */
+  --text: #4b5563;
+  --text-h: #0f172a;
+  --bg: #ffffff;
+  --bg-subtle: #f0fdf8;
+  --border: #d1fae5;
+  --code-bg: #ecfdf5;
+
+  --accent: #0d9488;          /* teal-600  */
+  --accent-dark: #0f766e;     /* teal-700  */
+  --accent-light: #5eead4;    /* teal-300  */
+  --accent-bg: rgba(13, 148, 136, 0.08);
+  --accent-border: rgba(13, 148, 136, 0.35);
+
+  --card-bg: #ffffff;
+  --card-border: #d1fae5;
+  --card-shadow: rgba(13, 148, 136, 0.08) 0 4px 16px, rgba(0, 0, 0, 0.04) 0 1px 4px;
+  --card-shadow-hover: rgba(13, 148, 136, 0.18) 0 8px 24px, rgba(0, 0, 0, 0.06) 0 2px 8px;
+
+  --shadow: rgba(0, 0, 0, 0.08) 0 10px 15px -3px, rgba(0, 0, 0, 0.04) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -32,26 +41,32 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+    --text: #94a3b8;
+    --text-h: #f1f5f9;
+    --bg: #0f1a18;
+    --bg-subtle: #0d1f1c;
+    --border: #1a3330;
+    --code-bg: #132420;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --accent: #2dd4bf;
+    --accent-dark: #14b8a6;
+    --accent-light: #5eead4;
+    --accent-bg: rgba(45, 212, 191, 0.1);
+    --accent-border: rgba(45, 212, 191, 0.35);
+
+    --card-bg: #131f1e;
+    --card-border: #1a3330;
+    --card-shadow: rgba(0, 0, 0, 0.3) 0 4px 16px, rgba(0, 0, 0, 0.15) 0 1px 4px;
+    --card-shadow-hover: rgba(45, 212, 191, 0.12) 0 8px 24px, rgba(0, 0, 0, 0.2) 0 2px 8px;
+
+    --shadow: rgba(0, 0, 0, 0.35) 0 10px 15px -3px, rgba(0, 0, 0, 0.2) 0 4px 6px -2px;
   }
 }
 
+/* ---- Reset & Base ---- */
 body {
   margin: 0;
+  background: var(--bg);
 }
 
 #root {
@@ -66,10 +81,9 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-h);
 }
 
@@ -82,6 +96,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,12 +106,12 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
 
-code,
-.counter {
+code, .counter {
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;

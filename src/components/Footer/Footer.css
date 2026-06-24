@@ -1,5 +1,5 @@
 .footer {
-    background: var(--bg);
+    background: var(--bg-subtle);
     border-top: 1px solid var(--border);
     margin-top: auto;
     padding: 40px 32px 0;
@@ -40,11 +40,11 @@
 }
 
 .footer-links-group h4 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--text-h);
+    letter-spacing: 0.9px;
+    color: var(--accent);
     margin: 0 0 14px;
 }
 
