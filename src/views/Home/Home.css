@@ -26,7 +26,9 @@
 }
 
 .home-cta-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 13px 32px;
     background: var(--accent);
     color: #fff;
@@ -92,9 +94,15 @@
 }
 
 .feature-icon {
-    font-size: 28px;
-    display: block;
-    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    margin-bottom: 14px;
 }
 
 .feature-card h3 {
@@ -108,6 +116,18 @@
     font-size: 13px;
     color: var(--text);
     line-height: 1.6;
+}
+
+.home-hero-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    margin-bottom: 24px;
 }
 
 /* ---- Steps ---- */
@@ -128,18 +148,15 @@
     box-shadow: var(--card-shadow);
 }
 
-.step-number {
+.step-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--accent-bg);
     border: 2px solid var(--accent-border);
-    color: var(--accent);
-    font-size: 18px;
-    font-weight: 700;
     margin-bottom: 14px;
 }
 

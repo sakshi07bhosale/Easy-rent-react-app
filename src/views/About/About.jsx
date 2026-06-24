@@ -1,3 +1,4 @@
+import { ShieldCheck, Lightbulb, Globe, LockKeyhole, Mail, Phone, MapPin, BookOpen, Star } from "lucide-react";
 import "./About.css";
 
 function About() {
@@ -14,6 +15,9 @@ function About() {
 
             {/* Our Story */}
             <section className="about-section">
+                <div className="about-section-icon">
+                    <BookOpen size={32} strokeWidth={1.6} color="var(--accent)" />
+                </div>
                 <h2 className="about-section-title">Our Story</h2>
                 <p className="about-text">
                     EasyRent was founded in 2022 by a group of renters who were tired of dealing with
@@ -34,22 +38,30 @@ function About() {
                 </p>
                 <div className="about-values">
                     <div className="value-card">
-                        <span className="value-icon">🤝</span>
+                        <span className="value-icon">
+                            <ShieldCheck size={28} strokeWidth={1.8} color="var(--accent)" />
+                        </span>
                         <h3>Trust</h3>
                         <p>We verify every listing and landlord so renters can browse with confidence.</p>
                     </div>
                     <div className="value-card">
-                        <span className="value-icon">💡</span>
+                        <span className="value-icon">
+                            <Lightbulb size={28} strokeWidth={1.8} color="var(--accent)" />
+                        </span>
                         <h3>Simplicity</h3>
                         <p>Finding a rental should be easy. We keep the experience clean and friction-free.</p>
                     </div>
                     <div className="value-card">
-                        <span className="value-icon">🌍</span>
+                        <span className="value-icon">
+                            <Globe size={28} strokeWidth={1.8} color="var(--accent)" />
+                        </span>
                         <h3>Accessibility</h3>
                         <p>Great housing options for everyone, regardless of budget or location.</p>
                     </div>
                     <div className="value-card">
-                        <span className="value-icon">🔒</span>
+                        <span className="value-icon">
+                            <LockKeyhole size={28} strokeWidth={1.8} color="var(--accent)" />
+                        </span>
                         <h3>Transparency</h3>
                         <p>No hidden fees, no fake prices. What you see is exactly what you get.</p>
                     </div>
@@ -74,7 +86,8 @@ function About() {
                         <span className="stat-label">Happy Renters</span>
                     </div>
                     <div className="stat-card">
-                        <span className="stat-number">4.8 ⭐</span>
+                        <Star size={18} strokeWidth={2} color="var(--accent)" style={{ marginBottom: 2 }} />
+                        <span className="stat-number">4.8</span>
                         <span className="stat-label">Average Rating</span>
                     </div>
                 </div>
@@ -87,9 +100,18 @@ function About() {
                     Have a question, feedback, or want to list your property? We'd love to hear from you.
                 </p>
                 <div className="about-contact">
-                    <span>📧 support@easyrent.com</span>
-                    <span>📞 +1 (800) 123-4567</span>
-                    <span>📍 New York, USA</span>
+                    <span>
+                        <Mail size={16} strokeWidth={2} color="var(--accent)" />
+                        support@easyrent.com
+                    </span>
+                    <span>
+                        <Phone size={16} strokeWidth={2} color="var(--accent)" />
+                        +1 (800) 123-4567
+                    </span>
+                    <span>
+                        <MapPin size={16} strokeWidth={2} color="var(--accent)" />
+                        New York, USA
+                    </span>
                 </div>
             </section>
 
